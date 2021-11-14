@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    /* outline: 1px dashed red; */
+}
+
+.background-image-register {
+    background-image: url("flask_app/static/img/pexels-shonejai-1227511.jpg");
+    background-color: #648a79;
+}
+.form-header {
+    color:#000102;
+}
+.form-box {
+    background-color: #54816c;
+    padding: 20px;
+    margin: 30px;
+    color:rgb(19, 17, 17);
+    
+}
+
+.result-box {
+    background-color: #33393d;
+    padding: 20px;
+    color: white;
+}
+.result-box h2 {
+    text-align: center;
+    color: #fcbf0c;
+}
+.result-box span {
+    
+    color: #fcbf0c;
+}
+.go-back-button {
+    text-align: end;
+    margin-right: 10px;
+}
+#top-header {
+    text-align: center;
+    color: rgb(20, 17, 17);
+    height: 40px;
+}
+
+.bg-primary {
+    background-color: yellow;
+    color: white;
+}
+.navbar-nav {
+    justify-content: right;
+}
+.random {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 670px;
+    gap: 1em;
+}
+.img {
+    height: 50px;
+    width: 300px;
+}
+.carosel-image {
+    width: 100%;
+    max-height: 600px;
+    /* margin-left: 100px; */
+}
+.card-logo-image {
+    max-height: 230px;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+
+
+/* Why New England Eyebrow Threading*/
+div.topic {
+    grid-area: topic;
+}
+
+div.first {
+    grid-area: first;
+}
+
+div.second {
+    grid-area: second;
+}
+
+div.third {
+    grid-area: third;
+}
+
+.first {
+    text-align: center;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.second {
+    text-align: center;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.third {
+    text-align: center;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+div.buttons {
+    grid-area: buttons;
+}
+
+.button1 {
+    text-align: center;
+    width: 150px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #496bf2;
+}
+
+.button2 {
+    text-align: center;
+    width: 150px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #496bf2;
+}
+
+.button3 {
+    text-align: center;
+    width: 150px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #496bf2;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "button button button";
+}
+
+.first h2 {
+    color: #496bf2;
+    font-size: 1.9em;
+    font-weight: 600;
+    padding-top: 40px;
+    font-style: italic;
+    padding-bottom: 7px;
+}
+
+.second h2 {
+    color: #496bf2;
+    font-size: 1.9em;
+    font-weight: 600;
+    padding-top: 40px;
+    font-style: italic;
+    padding-bottom: 7px;
+}
+
+.third h2 {
+    color: #496bf2;
+    font-size: 1.9em;
+    font-weight: 600;
+    padding-top: 40px;
+    font-style: italic;
+    padding-bottom: 7px;
+}
+
+.intro-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 35px;
+    grid-template-areas:
+        "topic topic topic"
+        "first second third"
+        "first second third"
+        "buttons buttons buttons";
+    margin-bottom: 15px;
+}
+
+.topic {
+    text-align: center;
+    font-weight: 12px;
+    
+    border-bottom: 2px solid black;
+}
+
+button {
+    padding: 3px 15px;
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+.providers-image {
+    max-height: 400px;
+}
+
+.copyright {
+    font-size: 13px;
+    padding-top: 8px;
+}
+
+.footer-container {
+    display: flex;
+    
+    height: 370px;
+    margin-bottom: 15px;
+}
+
+.item2 {
+    
+    max-height: 60px;
+
+    
+}
+
+.item+.item {
+    margin-left: 5%;
+}
+
+ul.no-bullets1 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    padding: 7px;
+}
+.footer-banner {
+    margin-top: 40px;
+}
+
+.footer-banner-dashboard {
+    margin-top: 100px;
+}
+
+.tiktok-image {
+    height:38px;
+    max-height: 38px;
+}
+
+.appointment-card{
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 60px;
+    margin: 5px;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    text-justify: auto;
+    border-radius: 50%;
+    background-color: white;
+}
+
+
+

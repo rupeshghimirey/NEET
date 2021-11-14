@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Appointments</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="text-center">
+        {% with messages = get_flashed_messages() %} 
+        {% if messages %}                            
+        {% for message in messages %}
+        <p class="text-danger"> {{message}} </p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    <div class="container">
+        <div class="d-flext justify-content-space main-header alert alert-success container text-center mt-3"
+            role="alert">
+            <a class="btn btn-danger m-1 float-end " href="/logout">Logout</a>
+            <a href="/appointments" class="btn btn-success m-1 float-end">Book Appointment </a>
+            <div><a href="/" class="m-1 btn btn-success float-end">Home</a></div>
+            <h2 class="text-primary" id="top-header">
+                New England Eyebrow Threading (NEET)
+            </h2>
+
+        </div>
+
+
+        <div class="container mt-2">
+
+            <h1>Welcome, <span class="text-info">{{user.first_name}} {{user.last_name}}!</span></h1>
+            <h4 class="text-center text-white bg-dark">Your Upcoming Appointments </h4>
+
+            <div class=" d-flex flex-wrap justify-content-around">
+                {%for appointment in all_appointments_with_user%}
+                <div class="appointment-card">
+                    <p class="text-danger">Appointment ID: {{appointment.id}}</p>
+                    <p class="text-success">With: Specialist Rudra</p>
+                    <p class="text-success">Date: {{appointment.date}}</p>
+                    <p class="text-success">Time: {{appointment.time}}</p><br>
+
+                    <p><a href="/edit/{{appointment.id}}">Edit</a> | <a href="/delete/{{appointment.id}}"">Delete</a></p>
+                    </div>
+                    {%endfor%}
+            </div>
+            
+            <div class=" text-center"><a href="/appointments" class="text-white btn btn-success mt-1 float-center">Add Appointment</a>
+            </div>
+
+
+        </div>
+
+        <h4 class="text-center text-white bg-dark mt-3">Discounts and Offers </h4>
+
+        <div class=" d-flex flex-wrap justify-content-around">
+            
+            <div class="appointment-card">
+                <p class="text-dark">Full Face Threading</p>
+                <p class="text-danger">Discount: 10%</p>
+                <p class="text-dark">Start Date: 22 Oct 2021</p>
+                <p class="text-dark">End Date: 05 Jan 2022</p><br>
+            </div>
+            <div class="appointment-card">
+                <p class="text-dark">Eyebrow Tint</p>
+                <p class="text-danger">Discount: 10%</p>
+                <p class="text-dark">Start Date: 22 Oct 2021</p>
+                <p class="text-dark">End Date: 05 Jan 2022</p><br>
+            </div>
+            <div class="appointment-card">
+                <p class="text-dark">Neck Threading</p>
+                <p class="text-danger">Discount: 10%</p>
+                <p class="text-dark">Start Date: 22 Oct 2021</p>
+                <p class="text-dark">End Date: 05 Jan 2022</p><br>
+            </div>
+            <div class="appointment-card">
+                <p class="text-dark">Eyebrow Threading</p>
+                <p class="text-danger">Discount: 10%</p>
+                <p class="text-dark">Start Date: 22 Oct 2021</p>
+                <p class="text-dark">End Date: 05 Jan 2022</p><br>
+            </div>
+
+            <div class="text-center text-danger mt-3">***Please bring the screenshot of this page that includes your name for discounts!***</div>
+
+
+
+
+    <div class="footer-banner alert alert-success text-center container " role="alert">
+        <h2 class="text-primary" id="top-header">
+                            Thank You for Visiting US!
+        </h2>
+    </div>
+
+</div>
+<script src="../static/js/script.js"></script>
+</body>
+
+</html>

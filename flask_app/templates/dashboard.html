@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="text-center text-danger">
+        {% with messages = get_flashed_messages() %} 
+        {% if messages %}                            
+        {% for message in messages %}
+        <p class="text-danger"> {{message}} </p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    <div class="main-body mt-2">
+        <div class="main-header alert alert-success container text-center" role="alert">
+            <h2 class="text-primary" id="top-header">
+                New England Eyebrow Threading (NEET)
+            </h2>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light container">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img class="rounded-circle z-depth-2" src="../static/img/neetlogo.jpeg" alt="" width="80"
+                        height="80">
+                </a>
+                <h2 class="text-success">NEET</h2>
+                
+                <div class="random collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/appointments/all">Make Appointment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/reviews" </a>Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login_register" </a>Login/Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- carosoul Implementation-->
+        <div id="carouselExampleIndicators" class="carousel slide container" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1">
+                </button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2">
+                </button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3">
+                </button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4">
+                </button>
+            </div>
+            <div class="carousel-inner container-fluid">
+                <div class="carousel-item active">
+                    <img src="../static/img/pexels-anthony-shkraba-5177991.jpg" class="carosel-image" alt="first image">
+                </div>
+
+
+                <div class="carousel-item">
+                    <img class="carosel-image" src="../static/img/pexels-min-an-792994.jpg" alt="second image">
+                </div>
+                <div class="carousel-item">
+                    <img src="../static/img/new2.jpg" class="carosel-image" alt="third image">
+                </div>
+                <div class="carousel-item">
+                    <img src="../static/img/eyebroww.jpg" class="carosel-image" alt="fourth image">
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- card implementation for location services hours-->
+        <div class=" container d-flex justify-content-between mt-3">
+            <div class="card" style="width: 25rem;">
+                <h2 class="text-center text-primary font-weight-bold">Location</h2>
+                <hr>
+                <img class="card-img-top card-logo-image rounded" src="../static/img/neetlogo.jpeg"
+                    alt="Card image cap">
+                <div class="card-body">
+
+                    <b-card-text>
+                        <ul class="no-bullets">
+                            <p>Name: New England Eyebrow Threading</p>
+                            <hr>
+                            <p>Address: 467 Main Street Suite A
+                                <hr>Melrose, MA 02176
+                            </p>
+                            <hr>
+                            <p>Phone: (781) 620-0267</p>
+
+                        </ul>
+                    </b-card-text>
+                </div>
+            </div>
+            <div class="card " style="width: 25rem;">
+                <h2 class="text-center text-primary font-weight-bold">Services/Price</h2>
+                <hr>
+                <div class="text-center  card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class=" list-group-item ">
+                            <a class="text-dark" data-bs-toggle="collapse" href="#collapseExample1" role="button"
+                                aria-expanded="false" aria-controls="collapseExample1">
+                                Eyebrow Threading
+                            </a>
+                            <div class="collapse" id="collapseExample1">
+                                $10
+                            </div>
+                        </li>
+
+                        <li class="list-group-item mt-4">
+                            <a class="text-dark" data-bs-toggle="collapse" href="#collapseExample2" role="button"
+                                aria-expanded="false" aria-controls="collapseExample2">
+                                Forhead
+                            </a>
+                            <div class="collapse" id="collapseExample2">
+                                $8
+                            </div>
+                        </li>
+                        <li class="list-group-item mt-4">
+                            <a class="text-dark" data-bs-toggle="collapse" href="#collapseExample3" role="button"
+                                aria-expanded="false" aria-controls="collapseExample3">
+                                Upper Lip
+                            </a>
+                            <div class="collapse" id="collapseExample3">
+                                $8
+                            </div>
+                        </li>
+                        <li class="list-group-item mt-4">
+                            <a class="text-dark" data-bs-toggle="collapse" href="#collapseExample4" role="button"
+                                aria-expanded="false" aria-controls="collapseExample4">
+                                Chin
+                            </a>
+                            <div class="collapse" id="collapseExample4">
+                                $9
+                            </div>
+                        </li>
+                        <li class="list-group-item mt-4">
+                            <a class="text-dark" data-bs-toggle="collapse" href="#collapseExample5" role="button"
+                                aria-expanded="false" aria-controls="collapseExample5">
+                                Neck Hair
+                            </a>
+                            <div class="collapse" id="collapseExample5">
+                                $12
+                            </div>
+                        </li>
+                        <li class="list-group-item mt-4">
+                            <a class="text-dark" data-bs-toggle="collapse" href="#collapseExample6" role="button"
+                                aria-expanded="false" aria-controls="collapseExample6">
+                                Full Face
+                            </a>
+                            <div class="collapse" id="collapseExample6">
+                                $35
+                            </div>
+                        </li>
+                        <li class="list-group-item mt-4">
+                            <a class="text-dark" data-bs-toggle="collapse" href="#collapseExample7" role="button"
+                                aria-expanded="false" aria-controls="collapseExample7">
+                                Eyebrow Tint
+                            </a>
+                            <div class="collapse" id="collapseExample7">
+                                $15
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+            <div class="card " style="width: 25rem;">
+                <h2 class="text-center text-primary font-weight-bold">Hours</h2>
+                <hr>
+                <div class="text-center card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Monday &nbsp &nbsp 11AM - 7PM</li>
+                        <li class="list-group-item mt-4">Tuesday &nbsp &nbsp 11AM - 7PM</li>
+                        <li class="list-group-item mt-4">Wednesday &nbsp 11AM - 7PM</li>
+                        <li class="list-group-item mt-4">Thursday &nbsp &nbsp 11AM - 7PM </li>
+                        <li class="list-group-item mt-4">Friday &nbsp &nbsp &nbsp 11AM - 7PM</li>
+                        <li class="list-group-item mt-4">Saturday &nbsp &nbsp 11AM - 7PM</li>
+                        <li class="list-group-item mt-4">Sunday &nbsp &nbsp Closed</li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Why new England eye brow threading container -->
+        <div class=" container intro-container mt-4">
+            <div class="topic text-success ">
+                <h1><b>Why New England Eyebrow Threading?</b></h1>
+            </div>
+
+            <div class="first">
+                <h2>Customer Centric</h2>
+                <p>
+                    We welcome everyone with warmth and amaze you with our excellent service. Also less wait time and
+                    easily accessible parking!
+                </p>
+                <a href="/login_register" class="button1">Join Us</a>
+            </div>
+
+            <div class="second">
+                <h2>We Care</h2>
+                <p class="second-p">
+                    We believe our customers deserve the best threading experience. At
+                    NEET, we work together to provide the care that you need.
+                </p>
+                <a href="/reviews" class="button1">Read Reviews</a>
+            </div>
+
+            <div class="third">
+                <h2>More Experience</h2>
+                <p>
+                    Specialist Rudra(also Owner) is highly specialized in her field with more than 10 years of
+                    experience in the threading world.
+                </p>
+                <a href="/providers" class="button1">Our Providers</a>
+            </div>
+        </div>
+        
+        <div class="container footer-container mt-5">
+            <hr>
+            <div class="item">
+                <hr>
+                <h3 class="text-success"><b>CONTACT US</b></h3>
+                <br />
+                <ul class="no-bullets1">
+                    <li>467 Main Street, Suite A</li>
+                    <li>Melrose, MA 02176</li>
+                    <br />
+                    <li>Phone: 781 620-0267</li>
+                    <br />
+                    <li>Text: 857-222-3847</li>
+                    <br />
+                    <li>Email:nethreading@gmail.com</li>
+                    <br />
+                    <a href="https://www.facebook.com/New-England-Eyebrow-Threading-105336027530518" class="btn btn-success rounded-circle" target="_blank">
+                        <img class="icon" src="../static/img/facebook.png" alt="" />
+                    </a>
+                    <a href="https://www.instagram.com/rdevils23/" class="btn btn-success rounded-circle" target="_blank">
+                        <img class="icon" src="../static/img/instagram.png" alt="" />
+                    </a>
+                    <a href="https://www.tiktok.com/@mahimabhattrai8" class="btn btn-success rounded-circle" target="_blank">
+                        <img class="icon tiktok-image" src="../static/img/tiktok-logo-black-png.png" alt="" />
+                    </a>
+                    
+                    
+                </ul>
+                <p class="copyright">© new england eyebrow threading</p>
+            </div>
+
+            <div class="item">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.7509881301103!2d-71.06761694903544!3d42.45431403703462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3739882c81fa1%3A0x579d35d41c5b59f6!2sNew%20England%20Eyebrow%20Threading!5e0!3m2!1sen!2sus!4v1634705542481!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+            <div class="item">
+                <hr>
+                <h3 class="text-success"><b>HOURS</b></h3>
+                <br />
+                <ul class="no-bullets1">
+                    <li><b>Monday</b></li>
+                    <li>11:00 AM - 7:00 PM</li>
+                    <br />
+                    <li><b>Tuesday</b></li>
+                    <li>11:00 AM - 7:00 PM</li>
+                    <br />
+                    <li><b>Wednesday</b></li>
+                    <li>11:00 AM - 7:00 PM</li>
+                    <br />
+                    <li><b>Thursday</b></li>
+                    <li>11:00 AM - 7:00 PM</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <ul class="no-bullets1">
+                <br />
+                <br />
+                    <br />
+                    <br>
+                    <li><b>Friday</b></li>
+                    <li>11:00 AM - 7:00 PM</li>
+                    <br />
+                    <li><b>Saturday</b></li>
+                    <li>11:00 AM - 7:00 PM</li>
+                    <br />
+                    <li><b>Sunday</b></li>
+                    <li>CLOSED</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-banner-dashboard alert alert-success text-center container " role="alert">
+            <h2 class="text-primary mt" id="top-header">
+                Thank You for Visiting US!
+            </h2>
+        </div>
+
+    </div>
+    
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+</html>
